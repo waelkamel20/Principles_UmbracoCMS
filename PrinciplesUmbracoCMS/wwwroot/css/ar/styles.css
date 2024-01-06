@@ -36,17 +36,17 @@ Colors:
 /**************************/
 @font-face {
     font-family: GE_SS_Two_Light;
-    src: url(/font/ge_ss_two_light/GE_SS_Two_Light.otf);
+    src: url(../../font/ge_ss_two_light/GE_SS_Two_Light.otf);
 }
 
 @font-face {
     font-family: GE_SS_Two_Medium;
-    src: url(/font/ge_ss_two_medium/GE_SS_Two_Medium.otf);
+    src: url(../../font/ge_ss_two_medium/GE_SS_Two_Medium.otf);
 }
 
 @font-face {
     font-family: GE_SS_TWO_BOLD;
-    src: url(/font/ge_ss_two_bold/GE_SS_TWO_BOLD.OTF);
+    src: url(../../font/ge_ss_two_bold/GE_SS_TWO_BOLD.OTF);
 }
 
 * {

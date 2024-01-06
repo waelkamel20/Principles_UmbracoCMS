@@ -9,6 +9,9 @@ builder.CreateUmbracoBuilder()
 
 WebApplication app = builder.Build();
 
+AppDomain.CurrentDomain.SetData("ContentRootPath", app.Environment.ContentRootPath);
+AppDomain.CurrentDomain.SetData("WebRootPath", app.Environment.WebRootPath);
+
 await app.BootUmbracoAsync();
 
 
