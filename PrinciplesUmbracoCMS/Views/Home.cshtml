@@ -62,7 +62,7 @@
                         <a class="nav-link active" aria-current="page" href="#header">الرئيسيه</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">مقوماتنا</a>
+                        <a class="nav-link" href="#ourIngredients">مقوماتنا</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">خدماتنا</a>
@@ -178,7 +178,7 @@
     </div> <!-- end of basic-1 -->
 
     <!-- Services -->
-    <div id="services" class="cards-1 bg-gray">
+    <div id="ourIngredients" class="cards-1 bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -476,7 +476,6 @@
                     <div class="slider-container">
                         <div class="swiper-container card-slider">
                             <div class="swiper-wrapper">
-
                                 <!-- end of slide -->
                                 <!-- Slide -->
                                 <div class="swiper-slide">
@@ -486,7 +485,6 @@
                                     <div class="testimonial-position">بعض اعمالنا</div>
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
-
 
                             </div> <!-- end of swiper-wrapper -->
                             <!-- Add Arrows -->
@@ -566,7 +564,6 @@
         </div>
     </div>
 
-
     <!-- EndOurPartners -->
 
     <!-- Contact -->
@@ -584,18 +581,19 @@
                         <!-- Contact Form -->
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control-input" placeholder="Name" required>
+                                <input name="FullName" type="text" class="form-control-input" placeholder="Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control-input" placeholder="Email" required>
+                                <input name="Email" type="email" class="form-control-input" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control-textarea" placeholder="Message" required></textarea>
+                                <textarea name="Message" class="form-control-textarea" placeholder="Message" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control-submit-button">Submit</button>
                             </div>
                         </form>
+
                         <!-- end of contact form -->
                     </div> <!-- end of text-container -->
                 </div>
@@ -702,7 +700,7 @@
         }
 
         var swiper = new Swiper('#OurPartnersSwiper', {
-            slidesPerView: 4,
+            slidesPerView: 5,
             direction: getDirection(),
             navigation: {
                 nextEl: '.swiper-button-next',

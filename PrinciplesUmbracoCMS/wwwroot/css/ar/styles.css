@@ -657,9 +657,10 @@ a {
 
         .cards-1 .card-icon .far,
         .cards-1 .card-icon .fas {
-            margin-left: 2rem;
+            margin-left: 0rem;
             color: #cc2973;
             font-size: 3.75rem;
+            margin-top:13px;
         }
 
     .cards-1 .card-body {
@@ -1579,4 +1580,9 @@ a {
         left: 0px;
         transform: rotate(90deg);
     }
+}
+
+
+[type=email], [type=number], [type=tel], [type=url] {
+    padding-left: 20px;
 }
