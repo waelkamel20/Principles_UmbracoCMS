@@ -5,6 +5,22 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="wwwroot\media\0eufdh3g\232057.png" />
+    <Content Include="wwwroot\media\0utgamcl\231941.png" />
+    <Content Include="wwwroot\media\20mcln0o\232133.png" />
+    <Content Include="wwwroot\media\hkojebha\was.png" />
+    <Content Include="wwwroot\media\l3poir2s\232120.png" />
+    <Content Include="wwwroot\media\lvyisd2i\232018.png" />
+    <Content Include="wwwroot\media\m0mhadz4\spa.png" />
+    <Content Include="wwwroot\media\nt3pscmz\231954.png" />
+    <Content Include="wwwroot\media\qo4mqr2q\header.png" />
+    <Content Include="wwwroot\media\reso4z44\232009.png" />
+    <Content Include="wwwroot\media\tgpiy5dg\231926.png" />
+    <Content Include="wwwroot\media\wtbcma5v\232032.png" />
+    <Content Include="wwwroot\media\zm5nfsgp\232044.png" />
+    <Content Include="wwwroot\media\zqiplwlr\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="wwwroot\htmlpage.html" />
   </ItemGroup>
 
