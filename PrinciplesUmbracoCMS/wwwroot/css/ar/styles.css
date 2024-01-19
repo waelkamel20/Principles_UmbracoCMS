@@ -1567,7 +1567,8 @@ a {
     }
 
         #OurPartnersSwiper .swiper-slide img {
-            max-width: 65%
+            max-width: 65%;
+            max-height:100px
         }
 
 @media (max-width: 760px) {
@@ -1579,6 +1580,10 @@ a {
     .swiper-button-prev {
         left: 0px;
         transform: rotate(90deg);
+    }
+
+    #OurPartnersSwiper .swiper-slide {
+       min-height:100px
     }
 }
 

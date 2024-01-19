@@ -27,7 +27,7 @@
             <div class="col-lg-7 col-xl-6">
                 <div class="text-container">
                     <h1 class="test-right display-3 mb-3">@(Model.Value("title"))</h1>
-                    <div class="p-large test-right"> 
+                    <div class="p-large test-right">
                         @(Model.Value("textBody"))
                     </div>
                     <a class="btn-solid-lg" href="#introduction">مزيد من المعلومات</a>
@@ -43,51 +43,19 @@
     </div> <!-- end of container -->
 </header> <!-- end of header -->
 <!-- end of header -->
-<!-- Statistics -->
-<div class="counter">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Counter -->
-                <div class="counter-container d-none">
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="231" data-purecounter-duration="3" class="purecounter">1</div>
-                        <div class="counter-info">Happy Customers</div>
-                    </div> <!-- end of counter-cell -->
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="385" data-purecounter-duration="1.5" class="purecounter">1</div>
-                        <div class="counter-info">Issues Solved</div>
-                    </div> <!-- end of counter-cell -->
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="159" data-purecounter-duration="3" class="purecounter">1</div>
-                        <div class="counter-info">Good Reviews</div>
-                    </div> <!-- end of counter-cell -->
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="128" data-purecounter-duration="3" class="purecounter">1</div>
-                        <div class="counter-info">Case Studies</div>
-                    </div> <!-- end of counter-cell -->
-                </div>
-                <!-- end of counter-container -->
-                <!-- end of counter -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of counter -->
 <!-- end of statistics -->
 <!-- Introduction -->
 <div id="introduction" class="basic-1 bg-gray">
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-md-9">
-                <h2>شركة مبادئ الاعلاميه</h2>
+                <h2>@(Model.Value("titleAbout"))</h2>
                 <div class="fs-5">
-                    انطلاقاً من أهمية دور الإعلام والاتصال في تعزيز تواصل كافة الجهات الحكومية والقطاع الخاص مع المستفيدين من خدماتها، تنفرد مبادئ بالعمل الإعلامي المتخصص في الإنتاج والتحرير والتصميم والنشر والمحتوى الإبداعي إضافة إلى إعداد وتنفيذ الحملات الإعلانية والترويجية من خلال كوادرنا الوطنية المؤهلة.
+                    @(Model.Value("textAbout"))
                 </div>
             </div>
             <div class="col-md-3 p-0">
-                <img src="./images/Newswire_06-1.webp" style="max-width:100%" />
+                <img src="@(Model.Value("mediaAbout"))" style="max-width:100%" />
             </div>
             <!-- end of col -->
         </div> <!-- end of row -->
@@ -96,92 +64,54 @@
 <!-- Services -->
 <div id="services" class="cards-1 bg-gray">
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-lg-5">
                 <div class="text-container">
-                    <h2>مايميزنا</h2>
+                    <h2>
+                        @(Model.Value("title"))
+                    </h2>
 
                     <ul class="list-unstyled li-space-lg">
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <br>
-                            <div class="flex-grow-1 e-2">اكثر من 70% من المحتوى الأعلامى المحلى المنشور في الوسائل والصحف الأعلاميه ومنصات التواصل الأجتماعي مصدره وكالة الأنباء السعوديه</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <br>
-                            <div class="flex-grow-1 e-2">اكثر من 24 وكالة انباء خليجيه ,عربيه اسلاميه, دوليه</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <br>
-                            <div class="flex-grow-1 e-2">صور واكثر من مليون وثيقه ممتد لاكثر من M يضم اكثر 4 100 عام</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <br>
-                            <div class="flex-grow-1 e-2">مركز مؤتمرات صحفيه متخصص ومجهز بوحدات متنقله لخدمات والبث و احدث التقنيات</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <br>
-                            <div class="flex-grow-1 e-2">تضم واس 19 مكتب محلى و دولى</div>
-                        </li>
+
+                        @{
+                            if (ourIngredients.Value("ingredientsList") != null)
+                            {
+                                foreach (var m in ourIngredients.Value<string[]>("ingredientsList"))
+                                {
+                                    <li class="d-flex">
+                                        <i class="fas fa-square"></i>
+                                        <br>
+                                        <div class="flex-grow-1 e-2">
+                                            @m
+                                        </div>
+                                    </li>
+                                }
+                            }
+                        }
                     </ul>
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
             <div class="col-lg-7">
                 <div class="card-container">
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-rocket"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">قوة الأنتشار والوصول</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="far fa-clock"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">الشركاء الدولين</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="far fa-comments"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">ارشيف الصور والوثائق</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-tools"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">مركز المؤتمرات</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-chart-pie"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">المكاتب الداخليه و الخارجيه</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
+
+                    @{
+                        if (ourIngredients.Value("ingredients") != null)
+                        {
+                            foreach (var mi in ourIngredients.Value<IEnumerable<IPublishedElement>>("ingredients"))
+                             {
+                                <!-- Card -->
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <span class="fas @(mi.Value("uploadLogo"))"></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@mi.Value("titleLogo")</h5>
+                                    </div>
+                                </div>
+                                <!-- end of card -->
+                             }
+                        }
+                    }
 
                 </div> <!-- end of container -->
             </div> <!-- end of col -->
@@ -195,7 +125,7 @@
 <!-- Projects -->
 <div id="projects" class="cards-2">
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-lg-12">
                 <h2 class="h2-heading">خدمات شركة مبادئ</h2>
             </div> <!-- end of col -->
@@ -276,7 +206,7 @@
 <!-- OurBusiness -->
 <div id="ourBusiness" class="cards-2">
     <div class="container">
-        <div class="row ">
+        <div class="row m-0">
             <div class="col-lg-12">
                 <h2 class="h2-heading text-center">بعض اعمالنا</h2>
             </div> <!-- end of col -->
@@ -286,10 +216,10 @@
 
             <div class="mb-5 w-100">
                 <div class="row m-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <img src="./images/Screenshot195400.png" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 mb-3">
                         <div class="card-body">
                             <h5 class="card-title mb-3">الأعلاميه</h5>
                             <p class="card-text">التغطية الإعلامية للمؤتمر الدولي لمستقبل منظمات التربية والثقافة والعلوم.</p>
@@ -298,15 +228,11 @@
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="mb-5 w-100">
-                <div class="row m-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <img src="./images/200306.png" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 mb-4">
                         <div class="card-body">
                             <h5 class="card-title mb-3">الأبداعي</h5>
                             <p class="card-text">سلسلة فيديوهات تسلط الضوء على أثر تطبيقات القران الكريم، علم الحديث, مواقيت الصلاة والعاد بي مستخدميها وعلى المجتمع بشكل عام,</p>
@@ -315,15 +241,11 @@
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="mb-5 w-100">
-                <div class="row m-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <img src="./images/VPR-HOME.jpg" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 mb-4">
                         <div class="card-body">
                             <h5 class="card-title mb-3">تنظيم و ادارة المؤتمرات</h5>
                             <p class="card-text">المؤتمر الصحفي الاستباقي لمبادرة مستقبل الاستثمار في مركز واس للمؤتمرات, المؤتمر الصحفي الاستباقي لمؤسسة المبادره المستقبل الاستثمار للتعريف بالنسخه السادسه للمؤتمر تحت شعار الاستثمار في الأنسانيه :تمكين النظام العالمي الجديد</p>
@@ -335,15 +257,11 @@
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="mb-5 w-100">
-                <div class="row m-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <img src="./images/211442.png" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 mb-4">
                         <div class="card-body">
                             <h5 class="card-title mb-3">تنظيم و ادارة</h5>
                             <p class="card-text">
@@ -357,6 +275,7 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -368,7 +287,7 @@
 <div class="slider-1 bg-gray d-none">
     <img class="quotes-decoration" src="./images/quotes.svg" alt="alternative">
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-lg-12">
 
                 <!-- Card Slider -->
@@ -469,7 +388,7 @@
     <img class="decoration-star" src="/images/decoration-star.svg" alt="alternative">
     <img class="decoration-star-2" src="/images/decoration-star.svg" alt="alternative">
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-lg-6">
                 <div class="text-container">
                     <h2>
@@ -478,7 +397,6 @@
 
                     <!-- Contact Form -->
                     @await Html.PartialAsync("_ContactUs")
-
 
                     <!-- end of contact form -->
                 </div> <!-- end of text-container -->
