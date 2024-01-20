@@ -4,6 +4,8 @@ namespace Principles_UmbracoCMS.Model
 {
     public class ContactUs
     {
+        public int ContactUsId { get; set; }
+
         [MaxLength(100)]
         public string FullName { get; set; } = string.Empty;
 

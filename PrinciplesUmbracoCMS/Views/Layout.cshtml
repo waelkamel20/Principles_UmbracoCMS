@@ -45,7 +45,7 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="/"><img src="/images/ai.png" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="/"><img src="@siteSettings?.Value("logo")" alt="alternative"></a>
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
@@ -60,7 +60,7 @@
                         <a class="nav-link active" aria-current="page" href="#header">الرئيسيه</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#ourIngredients">مقوماتنا</a>
+                        <a class="nav-link" href="#ourIngredients">مايميزنا</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">خدماتنا</a>
@@ -101,9 +101,15 @@
                         <h6>روابط</h6>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li>
-                                <a href="#header" class="d-block">الرئيسية</a>
-                                <a href="#OurBusiness" class="d-block">بعض اعمالنا</a>
-                                <a href="#services" class="d-block">خدمتنا</a>
+                           
+                                <a class="d-block" aria-current="page" href="#header">الرئيسيه</a>
+                         
+                                <a class="d-block" href="#ourIngredients">مايميزنا</a>
+                         
+                                <a class="d-block" href="#projects">خدماتنا</a>
+                           
+                                <a class="d-block" href="#ourBusiness">بعض اعمالنا</a>
+                                                                                  
                                 <a href="#contact" class="d-block">اتصل بنا</a>
                             </li>
                         </ul>

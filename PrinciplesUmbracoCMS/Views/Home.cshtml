@@ -5,7 +5,7 @@
 @{
     Layout = "Layout.cshtml";
 
-    var products = Umbraco.ContentAtRoot().DescendantsOrSelfOfType("projects").FirstOrDefault();
+    var OurBusiness = Umbraco.ContentAtRoot().DescendantsOrSelfOfType("projects").FirstOrDefault();
 
     var ourIngredients = Umbraco.ContentAtRoot().DescendantsOrSelfOfType("ourIngredients").FirstOrDefault();
 
@@ -62,13 +62,13 @@
     </div> <!-- end of container -->
 </div> <!-- end of basic-1 -->
 <!-- Services -->
-<div id="services" class="cards-1 bg-gray">
+<div id="ourIngredients" class="cards-1 bg-gray">
     <div class="container">
         <div class="row m-0">
             <div class="col-lg-5">
                 <div class="text-container">
                     <h2>
-                        @(Model.Value("title"))
+                        @(ourIngredients.Value("title"))
                     </h2>
 
                     <ul class="list-unstyled li-space-lg">
@@ -93,12 +93,11 @@
             </div> <!-- end of col -->
             <div class="col-lg-7">
                 <div class="card-container">
-
                     @{
                         if (ourIngredients.Value("ingredients") != null)
                         {
                             foreach (var mi in ourIngredients.Value<IEnumerable<IPublishedElement>>("ingredients"))
-                             {
+                            {
                                 <!-- Card -->
                                 <div class="card">
                                     <div class="card-icon">
@@ -109,10 +108,9 @@
                                     </div>
                                 </div>
                                 <!-- end of card -->
-                             }
+                            }
                         }
                     }
-
                 </div> <!-- end of container -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -127,77 +125,30 @@
     <div class="container">
         <div class="row m-0">
             <div class="col-lg-12">
-                <h2 class="h2-heading">خدمات شركة مبادئ</h2>
+                <h2 class="h2-heading">
+                    @services.Value("title")
+                </h2>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
         <div class="row">
             <div class="col-lg-12">
-                <!-- Card -->
-                <div class="card">
-                    <img class="img-fluid" src="./images/Digital-Marketing_09.webp" height="230" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">النشر</h5>
-                        <p class="card-text">عبر الموقع الألكتروني و المنصات التواصل الأجتماعي</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img class="img-fluid" src="./images/Digital-Marketing_07.webp" height="230" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">النشر الدولى</h5>
-                        <p class="card-text">من خلال شركاؤنا الدولين بحسب المناسبه واهميتها دوليا وبما يتسق مع السياسات الإعلامية</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img src="./images/VPR-HOME-about.webp" width="340" height="230" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">صناعة المحتوى</h5>
-                        <p class="card-text">خبر صحفي، تقارير بقوالب إعلامية مختلفة، فيديو، انفوجرافيك، موشن جرافيك, قصص إخبارية,, لقاءات مرئية.</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img src="./images/digital-marketing-hm.webp" height="230" width="340" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">التغطيه الاعلاميه</h5>
-                        <p class="card-text">العمل الاستباقي لإعداد الحملات الإعلامية قبل انطلاق الحدث، التغطية الميدانية، عقد اللقاءات والمقابلات الصحفية مع الضيوف، والشخصيات البارزة التغطيات عبر القنوات المقروءة والمسموعة والمرئية.</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img src="./images/Pr-hm.webp" height="230" width="340" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">تنظيم و اداره</h5>
-                        <p class="card-text">استضافه وتنظيم المؤتمرات الصحفية في مركز مؤتمرات واس، دعوة وسائل الإعلام المختلفة التلفزيون-الإذاعة-الصحافة محليا ودوليا، دعوة الإعلاميين المحلين والدوليين، دعوة كتاب الرأي والمتخصصين، القيام بالأعمال اللوجستية للمؤتمرات الصحفية</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img src="./images/monit-hm.webp" height="230" width="340" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">الأرشيف</h5>
-                        <p class="card-text">أرشيف متكامل يضم محتوى وطني تاريخي ممتد لأكثر من مئة عام، يحتوي على صور أرشيفية ووثائق</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-                <!-- Card -->
-                <div class="card">
-                    <img src="./images/image.jpg" height="230" width="340" alt="alternative">
-                    <div class="card-body">
-                        <h5 class="card-title">التدريب الأعلامي</h5>
-                        <p class="card-text">
-                            تقديم التدريب الإعلامي والإخباري المتخصص بالشراكة مع أبرز مراكز التدريب الإعلامية الإقليمية والدولية.
-                        </p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
+                @{
+                    if (services.Children.Any())
+                    {
+                        foreach (var mi in services.Children())
+                        {
+                            <!-- Card -->
+                            <div class="card">
+                                <img class="img-fluid" src="@mi.Value("homeMedia")" height="230" alt="alternative">
+                                <div class="card-body">
+                                    <h5 class="card-title">@mi.Value("title")</h5>
+                                    <p class="card-text">@mi.Value("briefHome")</p>
+                                </div>
+                            </div>
+                            <!-- end of card -->
+                        }
+                    }
+                }
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -208,7 +159,9 @@
     <div class="container">
         <div class="row m-0">
             <div class="col-lg-12">
-                <h2 class="h2-heading text-center">بعض اعمالنا</h2>
+                <h2 class="h2-heading text-center">
+                    @OurBusiness.Value("title")
+                </h2>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
 
@@ -216,65 +169,26 @@
 
             <div class="mb-5 w-100">
                 <div class="row m-0">
-                    <div class="col-md-4 mb-3">
-                        <img src="./images/Screenshot195400.png" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8 mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">الأعلاميه</h5>
-                            <p class="card-text">التغطية الإعلامية للمؤتمر الدولي لمستقبل منظمات التربية والثقافة والعلوم.</p>
-                            <p class="card-text">
-                                <small class="text-muted">عدد الحلقات 19, عدد الحلقات 11, عدد الحلقات 63</small>
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="col-md-4 mb-4">
-                        <img src="./images/200306.png" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">الأبداعي</h5>
-                            <p class="card-text">سلسلة فيديوهات تسلط الضوء على أثر تطبيقات القران الكريم، علم الحديث, مواقيت الصلاة والعاد بي مستخدميها وعلى المجتمع بشكل عام,</p>
-                            <p class="card-text">
-                                <small class="text-muted">عدد الحلقات 4, حقق التفاعل أكثر من 500 ألف.</small>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <img src="./images/VPR-HOME.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">تنظيم و ادارة المؤتمرات</h5>
-                            <p class="card-text">المؤتمر الصحفي الاستباقي لمبادرة مستقبل الاستثمار في مركز واس للمؤتمرات, المؤتمر الصحفي الاستباقي لمؤسسة المبادره المستقبل الاستثمار للتعريف بالنسخه السادسه للمؤتمر تحت شعار الاستثمار في الأنسانيه :تمكين النظام العالمي الجديد</p>
-                            <p class="">
-                                عقد لقاء صحفي للرئيس التنفيذي لمؤسسة مبادرة " مستقبل الاستثمار " ريتشارد اتياس
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> حضور اكثر من 20 وسيلة اعلامية</small>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <img src="./images/211442.png" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">تنظيم و ادارة</h5>
-                            <p class="card-text">
-                                تفردت وكالة الأنباء السعوديه باستضافه وتنظيم حفل تخريج برنامج قيادات عالميه بالشراكه مع جامعة جورج تاون في مركز واس للمؤتمرات حيث كانت المملكه العربيه السعوديه هي اول دوله في الشرق الاوسط تستضيف البرنامج,
-                            </p>
-                            <p class="">
-                                حضور عدد من السفراء و القاده والمسئولين,
-                            </p>
-                            <p>
-                                عقد لقاء صحفي مع المؤسس المشرف العام على برنامج قيادات عالميه جورج تاون
-                            </p>
-                        </div>
-                    </div>
+                    @{
+                        if (OurBusiness.Children.Any())
+                        {
+                            foreach (var item in OurBusiness.Children())
+                            {
+                                <div class="col-md-4 mb-3">
+                                    <img src="@item.Value("homeMedia")" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8 mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">@item.Value("title")</h5>
+                                        <div class="card-text">
+                                               @item.Value("briefHome")
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
 
                 </div>
             </div>
@@ -328,7 +242,7 @@
         <div class="row mb-5">
             <div class="col-lg-12">
                 <h1 class="h2-heading text-center">
-                    شركائنا
+                    @ourPartners.Value("title")
                 </h1>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -336,44 +250,23 @@
 
             <div id="OurPartnersSwiper" class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="">
-                            <img src="./images/ourpartners/231926.png" />
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/231941.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/231954.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232009.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232018.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232032.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232044.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232057.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232120.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/232133.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/spa.png" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/ourpartners/was.png" />
-                    </div>
+
+                    @{
+                        if (ourPartners.Value("partnersList") != null)
+                        {
+                            foreach (var partner in ourPartners.Value<IEnumerable<IPublishedElement>>("partnersList"))
+                            {
+                                var typedMedia = partner?.Value<IPublishedContent>("partnerLogo");
+
+                                <div class="swiper-slide">
+                                    <a target="_blank" @(partner.HasValue("partnerURL") ? "href=" + partner.Value<string>("partnerURL") : "") title="@partner.Value("partnerName")">
+                                        <img src="@(typedMedia?.Url())" />
+                                    </a>
+                                </div>
+                            }
+                        }
+                    }
+
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -392,7 +285,7 @@
             <div class="col-lg-6">
                 <div class="text-container">
                     <h2>
-                        لا تتردد بالتواصل معنا :
+                        @contactsRequest.Value("title")
                     </h2>
 
                     <!-- Contact Form -->
